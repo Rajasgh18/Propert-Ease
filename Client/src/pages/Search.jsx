@@ -2,6 +2,7 @@ import { BsChevronDown } from "react-icons/bs";
 import Map from "@components/Map";
 import { useState } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
     const [search, setSearch] = useState('');
@@ -50,16 +51,18 @@ export default function Search() {
                 <Map />
             </section>
             <section className="grid grid-cols-3 w-[80%] gap-10">
-                <div className="w-full h-72 rounded">
-                    <iframe className="w-full" src="https://3dwarehouse.sketchup.com/embed/30cc94c4319abfcfa7618c37f7ead62e?token=sbo8IjlWfII=&binaryName=s21" width="580" height="326"></iframe>
-                </div>
+                <Link to="/viewer?q=villa" className="w-full h-72 rounded">
+                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/30cc94c4319abfcfa7618c37f7ead62e?token=sbo8IjlWfII=&binaryName=s21"></iframe>
                     <p className="text-lg text-white">Villa</p>
-                <div className="w-full h-72 rounded">
-                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/5fb15dc72df054eaeffb32a827158a85?token=EG9YknLDs20=&binaryName=s21" width="580" height="326"></iframe>
-                </div>
-                <div className="w-full h-72 rounded">
-                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/b2fa21f4-62df-4a31-acd2-6003fdcbf1f1?token=eYKz7WfDlx0=&binaryName=s21" width="580" height="326"></iframe>
-                </div>
+                </Link>
+                <Link to="/viewer?q=1bhk" className="w-full h-72 rounded">
+                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/5fb15dc72df054eaeffb32a827158a85?token=EG9YknLDs20=&binaryName=s21"></iframe>
+                    <p className="text-lg text-white">1BHK</p>
+                </Link>
+                <Link to="/viewer?q=3bhk" className="w-full h-72 rounded">
+                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/b2fa21f4-62df-4a31-acd2-6003fdcbf1f1?token=eYKz7WfDlx0=&binaryName=s21"></iframe>
+                    <p className="text-lg text-white">3BHK</p>
+                </Link>
             </section>
         </section>
     )
