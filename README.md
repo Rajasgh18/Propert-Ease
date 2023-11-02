@@ -1,10 +1,9 @@
-# Criminal Recognition
-Tracking Criminal faces using facial recognition and track their suspicious acitivity.
+# Propert-EASE
+Real Estate made easy for buyers and sellers with the use of Virtual Reality/ Augmented Reality.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [WebApp] (#webApp)
-- [Whatsapp-Bot] (#whatsapp-bot)
 - [Sponsors] (#sponsors)
 
 
