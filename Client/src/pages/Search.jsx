@@ -51,8 +51,9 @@ export default function Search() {
             </section>
             <section className="grid grid-cols-3 w-[80%] gap-10">
                 <div className="w-full h-72 rounded">
-                    <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/30cc94c4319abfcfa7618c37f7ead62e?token=sbo8IjlWfII=&binaryName=s21" width="580" height="326"></iframe>
+                    <iframe className="w-full" src="https://3dwarehouse.sketchup.com/embed/30cc94c4319abfcfa7618c37f7ead62e?token=sbo8IjlWfII=&binaryName=s21" width="580" height="326"></iframe>
                 </div>
+                    <p className="text-lg text-white">Villa</p>
                 <div className="w-full h-72 rounded">
                     <iframe className="w-full h-full" src="https://3dwarehouse.sketchup.com/embed/5fb15dc72df054eaeffb32a827158a85?token=EG9YknLDs20=&binaryName=s21" width="580" height="326"></iframe>
                 </div>
