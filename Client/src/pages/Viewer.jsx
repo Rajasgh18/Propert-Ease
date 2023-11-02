@@ -26,21 +26,7 @@ export default function Viewer() {
         <>
             {/* <iframe className="min-h-[calc(100vh-3.5rem)] w-full" src="" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> */}
             <div className="sketchfab-embed-wrapper">
-                <iframe
-                    title="Apartment"
-                    frameBorder="0"
-                    allowFullScreen
-                    mozallowfullscreen="true"
-                    webkitallowfullscreen="true"
-                    allow="autoplay; fullscreen; xr-spatial-tracking"
-                    xr-spatial-tracking
-                    execution-while-out-of-viewport
-                    execution-while-not-rendered
-                    className="w-full min-h-[calc(100vh-3.5rem)]"
-                    web-share
-                    src="https://sketchfab.com/models/d89f5f0bec144c4c9ad9bd3e6157d685/embed"
-                />
-            </div>
+                <iframe className="min-h-[calc(100vh-3.5rem)] w-full" src="https://my.matterport.com/show?m=QGRPbYbvPLR&play=1&applicationKey=6gqc4925umxqxqn8rwib7893c" frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>            </div>
         </>
     )
 }
