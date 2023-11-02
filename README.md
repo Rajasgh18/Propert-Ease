@@ -12,16 +12,10 @@ It has been developed to track and maintain criminal database in which we will c
 <br>
 
 ## WebApp <a name="webapp"></a>
-It is a web page where we can track, view and compare media files using our features-
+It is a web page where we can view 360 Images , create AR/Vr files using our features-
 
-### Video Face Tracking
-We need to upload the video and image which contains the person whom we want to track in given video after processing it gives the timestamp in which the same person is detected
-
-### Realtime Face Tracking
-In this we need to provide an image of the person which compares every frame of the video which it gets in realtime from the different surveillance cameras and overlays a canvas whenever a person is detected in any of the cameras. We get alert messages in our device, with containing location and snapshot of the recognized person.
-
-### Database Face Tracking
-In this we detect or find the person using our database encryption method taken from realtime feed which continuosly encrypts all the camera feeds and stores it in the database.
+### AR/VR in real Estate
+In this repository we can create VR from images, videos and 3d objs 
 
 ## Installation
 To install the project dependencies, run the following commands:
@@ -29,26 +23,24 @@ To install the project dependencies, run the following commands:
 
 Install all the client dependencies
 ```bash
-cd WebApp/Client
+cd Propert-Ease/Client
 npm i
 ```
 
 Install all the server dependencies 
 ```bash
-cd WebApp/Server
+cd Propert-Ease/Server
 pip install -r requirements.txt
 ```
 
 ## Usage
 Start the Project by running the following command:
 ```bash
-cd Whatsap-Bot/Client
+cd Propert-Ease/Client
 
 npm start
 ```
 
-## Whatsapp <a name="whatsapp-bot"></a>
-It is developed to instantly get and manage criminal records via whatsapp. It requires a keyword to initiate the bot and login password are used for accessing the bot and then the image is send and the bot responds it by comparing it through existing criminal records(face_encodes, name, crime, station).
 
 ## Installation
 To install the project dependencies, run the following commands:
