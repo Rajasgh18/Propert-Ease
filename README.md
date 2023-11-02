@@ -54,7 +54,7 @@ npm i
 
 Install all the python dependencies 
 ```bash
-cd Whatsap-Bot/
+cd Propert-Ease/
 pip install -r requirements.txt
 ```
 
