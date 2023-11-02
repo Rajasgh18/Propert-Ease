@@ -56,7 +56,7 @@ To install the project dependencies, run the following commands:
 
 Install all the nodejs dependencies
 ```bash
-cd Whatsap-Bot/
+cd Propert-Ease/Client
 npm i
 ```
 
@@ -69,15 +69,7 @@ pip install -r requirements.txt
 ## Usage
 Start the Project by running the following command:
 ```bash
-cd Whatsap-Bot/Client
+cd Propert-Ease/Client
 
 npm start
 ```
-
-## Sponsors 
-
-### Auth0
-It is used for creating login panels which also provides other platforms login authentication like Google, Github etc.
-
-### Orkes
-It helps in making of API requests more smooth and convenient using its workflows and tasks.
