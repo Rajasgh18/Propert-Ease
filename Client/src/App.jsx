@@ -9,6 +9,7 @@ import Footer from '@components/Footer';
 import Post from '@pages/Post';
 import { UserContext } from '@context/UserState'
 import Form from '@pages/Form';
+import LoginSignup from '@pages/LoginSignup';
 
 export default function App() {
   const { mode } = useContext(UserContext);
@@ -31,6 +32,8 @@ export default function App() {
           <Route path='/viewer' element={<Viewer />} />
           <Route path='/search' element={<Search />} />
           <Route path='/post' element={<Post />} />
+          <Route path='/login' element={<LoginSignup />} />
+          <Route path='/signup' element={<LoginSignup />} />
           <Route path='/post/form' element={<Form />} />
         </Routes>
       </section>
