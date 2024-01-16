@@ -14,6 +14,7 @@ export default function Map() {
             navigator.geolocation.getCurrentPosition(position => {
                 setCurrentLocation({ lat: position.coords.latitude, lng: position.coords.longitude });
             })
+            console.log(currentLocation.lat + " " + currentLocation.lng)
         };
     }, [])
 
@@ -65,18 +66,17 @@ export default function Map() {
                     }
                 });
                 results.length !== 0 && results.map(r => {
-                    // console.log(r);
-                    // var marker = new mapboxgl.Marker()
-                    //     .setLngLat(r.geometry.coordinates)
-                    //     .setPopup(
-                    //         new mapboxgl.Popup({ offset: 25 }) // add popups
-                    //             .setHTML(
-                    //                 `<h3>${r.properties.title}</h3>
-                    //                     <p>${r.properties.full_address}</p>`
-                    //             )
-                    //     )
-                    //     .addTo(map);
-                    console.log(r);
+                    console.log(r.properties.name);
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat(r.geometry.coordinates)
+                        .setPopup(
+                            new mapboxgl.Popup({ offset: 25 }) // add popups
+                                .setHTML(
+                                    `<h3 style="color:#225; font-weight:bold">${r.properties.name}</h3>
+                                        <p style="color:#aab; font-weight:bold">${r.properties.full_address}</p>`
+                                )
+                        )
+                        .addTo(map);
                     map.on('click', 'places', (e) => {
                         // Copy coordinates array.
                         const coordinates = r.geometry.coordinates;
