@@ -4,9 +4,16 @@ import { UserContext } from '@context/UserState'
 
 export default function Navbar() {
 
-    const { mode, setMode } = useContext(UserContext);
+    const { mode, setMode, userId } = useContext(UserContext);
     const Navigate = useNavigate();
     const isLoginSignup = useLocation().pathname === '/login' || useLocation().pathname === '/signup';
+
+    const handleLog = ()=>{
+        if(userId){
+            localStorage.clear();
+        }
+        Navigate('/login')
+    }
 
     return !isLoginSignup && (
         <nav className='flex h-14 justify-between items-center border-b border-white text-white px-10 w-full'>
@@ -20,7 +27,7 @@ export default function Navbar() {
             </section>
             <section className='flex gap-4'>
                 <button onClick={() => setMode(mode === "Buyer" ? "Seller" : "Buyer")} className={`px-3 p-1 rounded ${mode === "Buyer" ? "border-blue-700 bg-blue-400" : "border-green-700 bg-green-400"} text-white`}>{mode}</button>
-                <button className='px-3 --1 rounded bg-blue-400' onClick={() => Navigate('/login')}>Login</button>
+                <button className={`px-3 p-1 rounded ${userId ? "bg-red-400" : "bg-blue-400"}`} onClick={handleLog}>{userId ? "Logout" : "Login"}</button>
             </section>
         </nav>
     )

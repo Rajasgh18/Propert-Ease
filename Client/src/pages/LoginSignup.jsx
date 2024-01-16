@@ -12,8 +12,8 @@ const LoginSignup = () => {
     const validationRef = useRef();
     const { url } = useContext(UserContext);
     const pageName = useLocation().pathname;
-    const [loginCred, setLoginCred] = useState({ username: '', password: '' });
-    const [signupCred, setSignupCred] = useState({ name: '', username: '', password: '', confirm: '' });
+    const [loginCred, setLoginCred] = useState({ email: '', password: '' });
+    const [signupCred, setSignupCred] = useState({ name: '', email: '', password: '', confirm: '' });
     const [isLoader, setIsLoader] = useState(false);
     const Navigate = useNavigate();
 
@@ -39,10 +39,10 @@ const LoginSignup = () => {
     const handleChange = (e) => {
         if (pageName === '/login') {
             setLoginCred({ ...loginCred, [e.target.name.toLowerCase()]: e.target.value });
-            setSignupCred({ name: '', username: '', password: '', confirm: '' });
+            setSignupCred({ name: '', email: '', password: '', confirm: '' });
         } else {
             setSignupCred({ ...signupCred, [e.target.name.toLowerCase()]: e.target.value });
-            setLoginCred({ username: '', password: '' });
+            setLoginCred({ email: '', password: '' });
         }
     }
 
@@ -70,7 +70,7 @@ const LoginSignup = () => {
             }
             else if (signupCred.confirm === signupCred.password) {
                 validationRef.current.innerHTML = '';
-                const res = await axios.post(`${url}/user/`, { name: signupCred.name, username: signupCred.username, password: signupCred.password });
+                const res = await axios.post(`${url}/user/`, { name: signupCred.name, email: signupCred.email, password: signupCred.password });
                 localStorage.setItem('userId', res.data.user._id);
                 setIsLoader(false);
                 Navigate('/');
@@ -94,26 +94,26 @@ const LoginSignup = () => {
             <section className='w-2/3 h-1/2 flex rounded-lg bg-white bg-opacity-25'>
                 <img ref={logoRef} src='/resources/loginBg.jpg' className='transition-all z-10 duration-700 ease-in-out object-cover w-1/2 h-full' />
                 {pageName === '/login' ? <form onSubmit={handleLogin} ref={loginRef} className='transition-all w-1/2 duration-700 ease-in-out flex flex-col lg:gap-3 md:gap-2 gap-1 lg:p-6 md:p-4 sm:p-3 p-2 py-3 text-slate-700'>
-                    <Input name="Username" value={loginCred.username} onChange={handleChange} />
+                    <Input name="Email" value={loginCred.email} onChange={handleChange} />
                     <Input name="Password" value={loginCred.password} onChange={handleChange} />
-                    <span className='text-right text-red-400'>Forgot Password?</span>
-                    <span ref={validationRef} className='text-red-600 text-center'></span>
+                    <span className='text-right text-red-400 cursor-pointer hover:underline'>Forgot Password?</span>
+                    <span ref={validationRef} className='text-red-400 font-bold'></span>
                     <button className='p-3 px-4 bg-red-400 my-2 rounded-lg flex text-lg justify-center text-white'>{!isLoader ? "Login" : <TailSpin height={29} width={29} color='white' />}</button>
                     <div className='text-lg flex justify-center gap-1'>
                         <span className='text-white'>If no account exists?</span>
-                        <Link to="/signup" className='text-red-400'>Sign Up</Link>
+                        <Link to="/signup" className='text-red-400 hover:underline'>Sign Up</Link>
                     </div>
                 </form> :
                     <form onSubmit={handleSignup} ref={signupRef} className='transition-all duration-700 ease-in-out w-1/2 flex flex-col gap-2 p-6 text-slate-700'>
                         <Input name="Name" id="signupName" value={signupCred.name} onChange={handleChange} />
-                        <Input name="Username" id="signupUsername" value={signupCred.username} onChange={handleChange} />
+                        <Input name="Email" id="signupEmail" value={signupCred.email} onChange={handleChange} />
                         <Input name="Password" id="signupPassword" value={signupCred.password} onChange={handleChange} />
                         <Input name="Confirm" id="signupConfirmPassword" value={signupCred.confirm} onChange={handleChange} />
-                        <span ref={validationRef} className='text-red-600 text-center'></span>
+                        <span ref={validationRef} className='text-red-400 font-bold'></span>
                         <button className='p-3 px-4 bg-red-400 my-2 flex justify-center rounded-lg text-xl text-white'>{!isLoader ? "Signup" : <TailSpin height={29} width={29} color='white' />}</button>
                         <div className='text-lg flex flex-wrap justify-center gap-1'>
                             <span className='text-white'>If account already exists?</span>
-                            <Link to="/login" className='text-red-400'>Login</Link>
+                            <Link to="/login" className='text-red-400 hover:underline'>Login</Link>
                         </div>
                     </form>
                 }
