@@ -8,7 +8,7 @@ Real Estate made easy for buyers and sellers with the use of Virtual Reality/ Au
 
 
 ## Project Overview
-It has been developed to track and maintain criminal database in which we will collect all media files and realtime feed in encrypted format afterwards this will use to compare and find about their existing criminal record.
+Real Estate made easy for buyers and sellers with the use of Virtual Reality/ Augmented Reality. With these we can easy visualize houses and render it using AR in realtime with proper measurements. 
 <br>
 
 ## WebApp <a name="webapp"></a>
