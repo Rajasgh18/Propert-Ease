@@ -53,14 +53,18 @@ export default function Viewer() {
             case "kitchen":
                 setUrl("https://my.matterport.com/show/?m=GcepsuwfPCG&sr=-1.26%2C-.52&ss=1&note=cq62xy9dd41ua0w6fgm8tpe9a&pin-pos=.74%2C.87%2C-.38")
                 break;
-            case "lab":
-                setUrl('https://my.matterport.com/show/?m=GrvsU1UWfkD' )
+            case "house1":
+                setUrl('https://my.matterport.com/show/?m=6GNETgQLzxV&play=1' )
+                break;
+            case "house2":
+                setUrl('https://my.matterport.com/show/?m=NHcj2tbncSU&play=1' )
                 break;
             case "room":
                 setUrl("https://my.matterport.com/show/?m=QGRPbYbvPLR&sr=-1.57%2C1.43&ss=1&note=iy54ifnbhcds1sq8d7kb4y3rb&pin-pos=-1.54%2C.21%2C-1.38")
                 break;
         }
     }
+    // <iframe width='853' height='480' src='https://my.matterport.com/show/?m=B3KamuDUFVQ' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
 
     return (
         <>
@@ -72,7 +76,8 @@ export default function Viewer() {
                         <span onClick={() => handleClick("vr")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>View In VR</span>
                         <span onClick={() => handleClick("kitchen")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>Kitchen</span>
                         <span onClick={() => handleClick("room")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>Room</span>
-                        <span onClick={() => handleClick("lab")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>Lab</span>
+                        <span onClick={() => handleClick("house1")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>House 1</span>
+                        <span onClick={() => handleClick("house2")} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>House 2</span>
                     </div>
                     <div className="relative flex items-center">
                         <span onClick={() => setHide(hide ? false : true)} className='bg-[#979797] bg-opacity-20 p-2 px-4 text-lg hover:bg-[rgba(151,151,151,0.2)] cursor-pointer border border-[rgba(151,151,151,0.4)] rounded'>View In AR</span>
